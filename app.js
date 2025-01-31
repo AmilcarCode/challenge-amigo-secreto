@@ -9,21 +9,21 @@ function validarTexto(input) {
 
 //Funcion para guardar el nombre ingresado
 function agregarAmigo(){
-    const nombre = document.getElementById("amigo").value.trim(); // Elimina espacios extras
-    // Crea un nuevo elemento <li>
-    const li = document.createElement('li');
-    // Añade el <li> a la lista <ul>
-    const lista = document.getElementById('listaAmigos');    
+    const nombre = document.getElementById("amigo");
+    const lista = document.getElementById('listaAmigos');
+     
     //Validar nombre y mostrar en la lista
-    if (validarTexto(nombre)) {
-        if (amigos.includes(nombre)) {
+    if (validarTexto(nombre.value)) {
+        if (amigos.includes(nombre.value)) {
             alert("El nombre ya está en la lista");
             //Limpiar input
-            document.getElementById("amigo").value = "";
+            nombre.value = "";
+            //document.getElementById("amigo").value = "";
         } else {
-            amigos.push(nombre);
+            amigos.push(nombre.value);
             //Limpiar input
-            document.getElementById("amigo").value = "";
+            nombre.value = "";
+            //document.getElementById("amigo").value = "";
             
             // **Limpiar la lista antes de actualizarla**
             lista.innerHTML = "";
@@ -35,13 +35,15 @@ function agregarAmigo(){
                 lista.appendChild(li);
             }
             //Limpiar input
-            document.getElementById("amigo").value = "";
+            nombre.value = "";
+            //document.getElementById("amigo").value = "";
             console.log(amigos)
         }        
     //Mensaje (alert) de ingreso incorrecto de nombre y limpieza de input
     }else {
         alert("Nombre incorrecto")
-        document.getElementById("amigo").value = "";
+        nombre.value = "";
+        //document.getElementById("amigo").value = "";
     }
 
 }
