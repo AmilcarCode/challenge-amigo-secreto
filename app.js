@@ -9,18 +9,35 @@ function validarTexto(input) {
 
 //Funcion para guardar el nombre ingresado
 function agregarAmigo(){
-    const nombre = document.getElementById("amigo").value;
+    const nombre = document.getElementById("amigo").value.trim(); // Elimina espacios extras
     // Crea un nuevo elemento <li>
     const li = document.createElement('li');
     // Añade el <li> a la lista <ul>
     const lista = document.getElementById('listaAmigos');    
     //Validar nombre y mostrar en la lista
     if (validarTexto(nombre)) {
-        amigos.push(nombre);
-        document.getElementById("amigo").value = "";
-        console.log(amigos)
-        li.textContent = nombre;  // Establece el nombre del amigo en el <li>            
-        lista.appendChild(li);
+        if (amigos.includes(nombre)) {
+            alert("El nombre ya está en la lista");
+            //Limpiar input
+            document.getElementById("amigo").value = "";
+        } else {
+            amigos.push(nombre);
+            //Limpiar input
+            document.getElementById("amigo").value = "";
+            
+            // **Limpiar la lista antes de actualizarla**
+            lista.innerHTML = "";
+
+            // **Recorrer el arreglo amigos y agregar elementos a la lista**
+            for (let i = 0; i < amigos.length; i++) {
+                const li = document.createElement("li");
+                li.textContent = amigos[i];
+                lista.appendChild(li);
+            }
+            //Limpiar input
+            document.getElementById("amigo").value = "";
+            console.log(amigos)
+        }        
     //Mensaje (alert) de ingreso incorrecto de nombre y limpieza de input
     }else {
         alert("Nombre incorrecto")
