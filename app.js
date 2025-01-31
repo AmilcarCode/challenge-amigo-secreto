@@ -26,6 +26,9 @@ function agregarAmigo(){
             
             // Limpiar la lista antes de actualizarla
             lista.innerHTML = "";
+            
+            // Ordenar el arreglo amigos alfabeticamente
+            amigos.sort((a, b) => a.localeCompare(b));
 
             // Recorrer el arreglo amigos y agregar elementos a la lista
             for (let i = 0; i < amigos.length; i++) {
