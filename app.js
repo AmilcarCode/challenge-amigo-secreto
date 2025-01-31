@@ -1,5 +1,7 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let amigos = []
+const nombre = document.getElementById("amigo");
+const lista = document.getElementById('listaAmigos');
 
 //Funcion para verificar el texto ingresado
 function validarTexto(input) {
@@ -8,22 +10,19 @@ function validarTexto(input) {
 }
 
 //Funcion para guardar el nombre ingresado
-function agregarAmigo(){
-    const nombre = document.getElementById("amigo");
-    const lista = document.getElementById('listaAmigos');
-     
+function agregarAmigo(){ 
     //Validar nombre y mostrar en la lista
     if (validarTexto(nombre.value)) {
+
         if (amigos.includes(nombre.value)) {
+            //Mensaje (alert) de ingreso de nomrbe repetido
             alert("El nombre ya está en la lista");
             //Limpiar input
             nombre.value = "";
-            //document.getElementById("amigo").value = "";
+
         } else {
             amigos.push(nombre.value);
-            //Limpiar input
             nombre.value = "";
-            //document.getElementById("amigo").value = "";
             
             // **Limpiar la lista antes de actualizarla**
             lista.innerHTML = "";
@@ -34,16 +33,13 @@ function agregarAmigo(){
                 li.textContent = amigos[i];
                 lista.appendChild(li);
             }
-            //Limpiar input
             nombre.value = "";
-            //document.getElementById("amigo").value = "";
             console.log(amigos)
         }        
     //Mensaje (alert) de ingreso incorrecto de nombre y limpieza de input
     }else {
         alert("Nombre incorrecto")
         nombre.value = "";
-        //document.getElementById("amigo").value = "";
     }
 
 }
