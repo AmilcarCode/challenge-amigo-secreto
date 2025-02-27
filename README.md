@@ -1,7 +1,7 @@
 # challenge-amigo-secreto
 Amigo Secreto
 
-Descripción:
+Descripción:desc
 Este proyecto es una aplicación web interactiva diseñada para facilitar la organización de sorteos de "Amigo Secreto". Permite a los usuarios ingresar nombres de amigos en una lista y, posteriormente, realizar un sorteo aleatorio para determinar quién será el "amigo secreto" de cada persona. Es ideal para intercambios de regalos en eventos como Navidad, cumpleaños o reuniones sociales.
 
 Tecnologías Utilizadas:
@@ -42,7 +42,7 @@ Estructura del Proyecto:
 
 Captura de Pantalla
 
-(Aquí puedes agregar una imagen de la interfaz de usuario para ilustrar su funcionamiento.)
+![Imagen Muestra](assets\brave_screenshot_amilcarcode.github.io.png)
 
 Mejoras Futuras:
 - Opción para eliminar nombres de la lista.
